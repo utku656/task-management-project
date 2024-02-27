@@ -7,12 +7,15 @@ import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import { Task } from "../../utils/types";
+import { useAuth } from "../../hooks/useAuth";
+import { API_PORT } from "../../utils/const";
 
 export default function Amounts() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const { user } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:3030/tasks?ownerUsername=utku656")
+    fetch(`${API_PORT}/tasks?ownerUsername=${user?.username}`)
       .then((res) => {
         if (!res.ok) {
           throw Error("Error fetching users data");

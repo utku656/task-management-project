@@ -19,7 +19,7 @@
       "title": "UI Design",
       "description": "UI Design Implementation of Spotzer Framework",
       "owner": "Utku",
-      "ownerId": 1,
+      "ownerId": "1",
       "ownerUsername": "utku656",
       "status": 3,
       "statusCode": "done",
@@ -65,13 +65,13 @@
       "title": "API Design",
       "description": "API Design Implementation of Spotzer Framework",
       "owner": "Utku",
-      "ownerId": 1,
+      "ownerId": "1",
       "ownerUsername": "utku656",
-      "status": 2,
-      "statusCode": "inProgress",
-      "statusText": "in Progress",
+      "status": 3,
+      "statusCode": "done",
+      "statusText": "Done",
       "taskAmount": "20 Euro",
-      "startDate": "04-01-2024",
+      "startDate": "27-02-2024",
       "endDate": null,
       "history": [
         {
@@ -93,6 +93,16 @@
           "status": 2,
           "startDate": "05-01-2024",
           "endDate": "06-01-2024"
+        },
+        {
+          "id": 1,
+          "oldStatusText": "In Progress",
+          "statusText": "Done",
+          "statusCode": "done",
+          "owner": "Utku",
+          "status": 3,
+          "startDate": "27-02-2024",
+          "endDate": null
         }
       ]
     },
@@ -100,14 +110,14 @@
       "id": "3",
       "title": "API Documentation",
       "description": "API Documentation of Spotzer Framework",
-      "owner": "Utku",
-      "ownerId": "1",
-      "ownerUsername": "utku656",
-      "status": 1,
-      "statusCode": "toDo",
-      "statusText": "To Do",
+      "owner": "Beatriz",
+      "ownerId": "2",
+      "ownerUsername": "beatriz123",
+      "status": 3,
+      "statusCode": "done",
+      "statusText": "Done",
       "taskAmount": "20 Euro",
-      "startDate": "04-01-2024",
+      "startDate": "28-02-2024",
       "endDate": null,
       "history": [
         {
@@ -119,6 +129,26 @@
           "status": 1,
           "startDate": "04-01-2024",
           "endDate": null
+        },
+        {
+          "id": 2,
+          "oldStatusText": "To Do",
+          "statusText": "In Progress",
+          "statusCode": "inProgress",
+          "owner": "Utku",
+          "status": 2,
+          "startDate": "28-02-2024",
+          "endDate": null
+        },
+        {
+          "id": 3,
+          "oldStatusText": "In Progress",
+          "statusText": "Done",
+          "statusCode": "done",
+          "owner": "Beatriz",
+          "status": 3,
+          "startDate": "28-02-2024",
+          "endDate": null
         }
       ]
     },
@@ -127,7 +157,7 @@
       "title": "Server Deployment",
       "description": "Server Deployment of Spotzer Framework",
       "owner": "Beatriz",
-      "ownerId": 2,
+      "ownerId": "2",
       "ownerUsername": "beatriz123",
       "status": 1,
       "statusCode": "toDo",

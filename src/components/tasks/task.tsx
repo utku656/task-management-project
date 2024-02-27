@@ -17,28 +17,31 @@ import Histories from "../histories/history";
 import { Task, TaskStatuses } from "../../utils/types";
 import { onDragEnd } from "../../utils/helper";
 import { useAuth } from "../../hooks/useAuth";
-
+import { API_PORT } from "../../utils/const";
+import { useLocation } from "react-router-dom";
+export const TASK_STATUS: TaskStatuses = {
+  toDo: {
+    name: "To Do",
+    id: 1,
+    items: [],
+  },
+  inProgress: {
+    name: "In Progress",
+    id: 2,
+    items: [],
+  },
+  done: {
+    name: "Done",
+    id: 3,
+    items: [],
+  },
+};
 export default function Tasks() {
-  const taskStatus: TaskStatuses = {
-    toDo: {
-      name: "To Do",
-      items: [],
-    },
-    inProgress: {
-      name: "In Progress",
-      items: [],
-    },
-    done: {
-      name: "Done",
-      items: [],
-    },
-  };
-  const [columns, setColumns] = useState<TaskStatuses>(taskStatus);
+  const [columns, setColumns] = useState<TaskStatuses>(TASK_STATUS);
   const [task, setTask] = useState<Task | null>(null);
   const { user } = useAuth();
-
   useEffect(() => {
-    fetch("http://localhost:3030/tasks")
+    fetch(`${API_PORT}/tasks`)
       .then((res) => {
         if (!res.ok) {
           throw Error("Error fetching users data");
@@ -46,17 +49,17 @@ export default function Tasks() {
         return res.json();
       })
       .then((data) => {
+        const temp = JSON.parse(JSON.stringify(TASK_STATUS));
         data.forEach((element: Task) => {
-          taskStatus[element.statusCode as keyof TaskStatuses].items.push(
-            element
-          );
-          setColumns({ ...taskStatus });
+          temp[element.statusCode as keyof TaskStatuses].items.push(element);
         });
+        setColumns({ ...temp });
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
   const handleAvatarClick = (item: Task, index: number) => {
     item.ownerId = user?.id ?? null;
     item.ownerUsername = user?.username ?? null;
@@ -66,7 +69,7 @@ export default function Tasks() {
       method: "PUT",
       body: JSON.stringify(item),
     };
-    fetch(`http://localhost:3030/tasks/${item.id}`, requestOptions)
+    fetch(`${API_PORT}/tasks/${item.id}`, requestOptions)
       .then((res) => {
         if (!res.ok) {
           throw Error("Error fetching users data");
@@ -122,7 +125,7 @@ export default function Tasks() {
                             return (
                               <Draggable
                                 key={item.id}
-                                draggableId={item.id.toString()}
+                                draggableId={`${item.id}-${index}`}
                                 index={index}
                               >
                                 {(provided, snapshot) => {

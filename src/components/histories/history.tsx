@@ -7,9 +7,11 @@ import {
   Stack,
   Chip,
   Divider,
+  Box,
 } from "@mui/material";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { History, HistoryProps } from "../../utils/types";
+import React from "react";
 
 export default function Histories({ task }: HistoryProps) {
   return (
@@ -25,9 +27,9 @@ export default function Histories({ task }: HistoryProps) {
       <Divider></Divider>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          {task?.history.map((element: History) => {
+          {task?.history.map((element: History, index: number) => {
             return (
-              <>
+              <React.Fragment key={index}>
                 <Stack spacing={2} padding={2}>
                   <Stack direction="row" spacing={2}>
                     <Avatar sx={{ bgcolor: "#45CAA5" }} aria-label="recipe">
@@ -35,6 +37,7 @@ export default function Histories({ task }: HistoryProps) {
                     </Avatar>
                     <Typography
                       variant="h6"
+                      component="div"
                       color="text.secondary"
                       alignSelf="center"
                     >
@@ -59,10 +62,13 @@ export default function Histories({ task }: HistoryProps) {
                       style={{ color: "#45CAA5", borderColor: "#45CAA5" }}
                       variant="outlined"
                     />
+                    <Box component="span" alignSelf="center">
+                      {element.startDate}
+                    </Box>
                   </Stack>
                 </Stack>
                 <Divider></Divider>
-              </>
+              </React.Fragment>
             );
           })}
         </DialogContentText>

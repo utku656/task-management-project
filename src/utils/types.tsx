@@ -21,7 +21,7 @@ export interface Task {
   title: string;
   description: string;
   owner: string | null;
-  ownerId: number | null;
+  ownerId: string | null;
   ownerUsername: string | null;
   status: number;
   statusCode: string;
@@ -36,6 +36,7 @@ export interface User extends UserAuth {
 }
 export interface Status {
   name: string;
+  id: number;
   items: Task[];
 }
 export interface TaskStatuses {
@@ -47,7 +48,7 @@ export interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
 export interface UserAuth {
-  id: number;
+  id: string;
   name: string;
   username: string;
 }

@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useAuth } from "../../hooks/useAuth";
 import { User } from "../../utils/types";
+import { API_PORT } from "../../utils/const";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -17,7 +18,7 @@ function LoginPage() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    fetch("http://localhost:3030/users")
+    fetch(`${API_PORT}/users`)
       .then((res) => {
         if (!res.ok) {
           throw Error("Error fetching users data");
