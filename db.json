@@ -1,0 +1,152 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Utku",
+      "username": "utku656",
+      "password": "utku656"
+    },
+    {
+      "id": "2",
+      "name": "Beatriz",
+      "username": "beatriz123",
+      "password": "beatriz123"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "UI Design",
+      "description": "UI Design Implementation of Spotzer Framework",
+      "owner": "Utku",
+      "ownerId": 1,
+      "ownerUsername": "utku656",
+      "status": 3,
+      "statusCode": "done",
+      "statusText": "Done",
+      "taskAmount": "10 Euro",
+      "startDate": "04-01-2024",
+      "endDate": "07-01-2024",
+      "history": [
+        {
+          "id": 1,
+          "oldStatusText": null,
+          "statusText": "To Do",
+          "statusCode": "toDo",
+          "owner": "Utku",
+          "status": 1,
+          "startDate": "04-01-2024",
+          "endDate": "05-01-2024"
+        },
+        {
+          "id": 2,
+          "oldStatusText": "To Do",
+          "statusText": "in Progress",
+          "statusCode": "inProgress",
+          "owner": "Utku",
+          "status": 2,
+          "startDate": "05-01-2024",
+          "endDate": "06-01-2024"
+        },
+        {
+          "id": 3,
+          "oldStatusText": "in Progress",
+          "statusText": "Done",
+          "statusCode": "done",
+          "owner": "Utku",
+          "status": 3,
+          "startDate": "06-01-2024",
+          "endDate": "07-01-2024"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "API Design",
+      "description": "API Design Implementation of Spotzer Framework",
+      "owner": "Utku",
+      "ownerId": 1,
+      "ownerUsername": "utku656",
+      "status": 2,
+      "statusCode": "inProgress",
+      "statusText": "in Progress",
+      "taskAmount": "20 Euro",
+      "startDate": "04-01-2024",
+      "endDate": null,
+      "history": [
+        {
+          "id": 1,
+          "oldStatusText": null,
+          "statusText": "To Do",
+          "statusCode": "toDo",
+          "owner": "Utku",
+          "status": 1,
+          "startDate": "04-01-2024",
+          "endDate": "05-01-2024"
+        },
+        {
+          "id": 2,
+          "oldStatusText": "To Do",
+          "statusText": "in Progress",
+          "statusCode": "inProgress",
+          "owner": "Utku",
+          "status": 2,
+          "startDate": "05-01-2024",
+          "endDate": "06-01-2024"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "API Documentation",
+      "description": "API Documentation of Spotzer Framework",
+      "owner": "Utku",
+      "ownerId": "1",
+      "ownerUsername": "utku656",
+      "status": 1,
+      "statusCode": "toDo",
+      "statusText": "To Do",
+      "taskAmount": "20 Euro",
+      "startDate": "04-01-2024",
+      "endDate": null,
+      "history": [
+        {
+          "id": 1,
+          "oldStatusText": null,
+          "statusText": "To Do",
+          "statusCode": "toDo",
+          "owner": null,
+          "status": 1,
+          "startDate": "04-01-2024",
+          "endDate": null
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Server Deployment",
+      "description": "Server Deployment of Spotzer Framework",
+      "owner": "Beatriz",
+      "ownerId": 2,
+      "ownerUsername": "beatriz123",
+      "status": 1,
+      "statusCode": "toDo",
+      "statusText": "To Do",
+      "taskAmount": "30 Euro",
+      "startDate": "04-02-2024",
+      "endDate": null,
+      "history": [
+        {
+          "id": 1,
+          "oldStatusText": null,
+          "statusText": "To Do",
+          "statusCode": "toDo",
+          "owner": "Beatriz",
+          "status": 1,
+          "startDate": "04-02-2024",
+          "endDate": null
+        }
+      ]
+    }
+  ]
+}
