@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import LoginPage from "./login-page";
 import { AuthProvider } from "../../hooks/useAuth";
 import fetchMock from "jest-fetch-mock";
@@ -15,16 +15,7 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockUsedNavigate,
 }));
 
-const mockResponse = [
-  { id: 1, name: "Utku", username: "utku656", password: "utku656" },
-  {
-    id: 2,
-    name: "Beatriz",
-    username: "beatriz123",
-    password: "beatriz123",
-  },
-];
-test("renders without crashing", () => {
+test("renders without crashing", async () => {
   render(
     <AuthProvider>
       <LoginPage />
@@ -46,7 +37,5 @@ test("renders without crashing", () => {
   });
   fireEvent.submit(screen.getByRole("button"));
 
-  waitFor(() => {
-    expect(fetchMock).toHaveBeenCalledWith("http://localhost:3030/users");
-  });
+  await expect(fetchMock).toHaveBeenCalledWith("http://localhost:3030/users");
 });
